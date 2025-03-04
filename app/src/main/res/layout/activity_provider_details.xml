@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ProviderDetailsActivity">
+
+    <!-- Mechanic Profile -->
+    <ImageView
+        android:id="@+id/imgMechanic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile_placeholder"
+        android:contentDescription="Mechanic Profile Picture"
+        android:background="@drawable/circle_shape"/>
+
+    <TextView
+        android:id="@+id/tvMechanicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingTop="8dp"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="4.5"
+        android:stepSize="0.5"
+        android:layout_gravity="center"/>
+
+    <!-- Service Type -->
+    <TextView
+        android:id="@+id/tvServiceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tire Change"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:paddingTop="8dp"/>
+
+    <!-- Estimated Time of Arrival -->
+    <TextView
+        android:id="@+id/tvETA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ETA: 10 mins"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:paddingTop="4dp"/>
+
+    <!-- Contact Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:drawableStart="@drawable/ic_call"
+            android:padding="10dp"
+            android:backgroundTint="@color/primaryColor"/>
+
+        <Button
+            android:id="@+id/btnChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat"
+            android:drawableStart="@drawable/ic_chat"
+            android:padding="10dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/primaryColor"/>
+    </LinearLayout>
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel Request"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/red"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvRequestTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request Assistance"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etVehicleType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Vehicle Type (e.g. Sedan, Truck, SUV)"
+        android:padding="12dp"
+        android:background="@drawable/input_field_bg"/>
+
+    <EditText
+        android:id="@+id/etProblemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Describe the issue"
+        android:padding="12dp"
+        android:background="@drawable/input_field_bg"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/btnCaptureImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Capture Image"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/ivCapturedImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnSubmitRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Request"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
