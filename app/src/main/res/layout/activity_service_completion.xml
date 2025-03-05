@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Service Summary -->
+    <TextView
+        android:id="@+id/tvServiceSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Service Summary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvServiceDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details of the completed service"
+        android:textSize="16sp"/>
+
+    <!-- Rating System -->
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/etReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Leave a review..."
+        android:layout_marginTop="10dp"/>
+
+    <!-- Confirmation Button -->
+    <Button
+        android:id="@+id/btnConfirmCompletion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Completion"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Back to Home -->
+    <Button
+        android:id="@+id/btnGoHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Home"
+        android:backgroundTint="@color/Secondary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

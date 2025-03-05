@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tvComplaintTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit a Complaint"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Complaint Type -->
+    <Spinner
+        android:id="@+id/spinnerComplaintType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/complaint_types"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Complaint Details -->
+    <EditText
+        android:id="@+id/etComplaintDetails"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Describe your complaint..."
+        android:gravity="top"
+        android:background="@android:drawable/edit_text"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textMultiLine"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btnSubmitComplaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

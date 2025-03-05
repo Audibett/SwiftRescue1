@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Swift Rescue1</string>
+    <!-- Complaint Types -->
+    <string-array name="complaint_types">
+        <item>Service Delay</item>
+        <item>Rude Behavior</item>
+        <item>Overcharging</item>
+        <item>Poor Service Quality</item>
+        <item>Other</item>
+    </string-array>
 </resources>
