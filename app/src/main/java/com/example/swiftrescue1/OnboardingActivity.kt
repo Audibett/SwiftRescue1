@@ -94,7 +94,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun navigateToHome() {
-        startActivity(Intent(this, HomeActivity::class.java))
+        startActivity(Intent(this, RegisterActivity::class.java))
         finish()
     }
 }

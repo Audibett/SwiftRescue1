@@ -23,7 +23,7 @@
             android:value="AIzaSyCoJ3rdhogQL9vf-YLXIaSA34sQadHrN88"/>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".OnboardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -32,5 +32,6 @@
         </activity>
 
         <activity android:name=".RegisterActivity"/>
+
     </application>
 </manifest>
