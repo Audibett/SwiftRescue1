@@ -23,7 +23,7 @@
         android:id="@+id/tvMechanicName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="John Doe"
+        android:text="Audia Bett"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="center"

@@ -31,9 +31,9 @@ class EditProfileActivity : AppCompatActivity() {
         btnCancel = findViewById(R.id.btnCancel)
 
         // Load existing data (Replace with actual data retrieval)
-        etName.setText("John Doe")
+        etName.setText("Audi Bett")
         etPhone.setText("+254 700 123 456")
-        etEmail.setText("johndoe@example.com")
+        etEmail.setText("Aidibett@outlook.com")
 
         btnChangeProfilePic.setOnClickListener {
             Toast.makeText(this, "Profile picture change feature coming soon!", Toast.LENGTH_SHORT).show()

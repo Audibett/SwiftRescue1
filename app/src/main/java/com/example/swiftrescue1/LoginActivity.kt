@@ -2,49 +2,63 @@ package com.example.swiftrescue1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.util.Patterns
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var tvRegisterLink: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+        etEmail = findViewById(R.id.etEmail)
+        etPassword = findViewById(R.id.etPassword)
+        btnLogin = findViewById(R.id.btnLogin)
+        tvRegisterLink = findViewById(R.id.tvRegisterLink)
 
         btnLogin.setOnClickListener {
-            val email = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
+            authenticateUser()
+        }
 
-            // 1. Check for empty fields
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+        tvRegisterLink.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
-            // 2. Email format validation
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                etEmail.error = "Invalid email address"
-                return@setOnClickListener
-            }
+    private fun authenticateUser() {
+        val email = etEmail.text.toString().trim()
+        val password = etPassword.text.toString().trim()
 
-            // 3. Password validation (Minimum 6 characters, at least one letter and one number)
-            if (password.length < 6 || !password.matches(Regex("^(?=.[A-Za-z])(?=.\\d).{6,}$"))) {
-                etPassword.error = "Password must be at least 6 chars and contain letters & numbers"
-                return@setOnClickListener
-            }
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Email and password are required", Toast.LENGTH_SHORT).show()
+            return
+        }
 
-            // 4. Proceed with authentication
-            Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Enter a valid email address", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (password.length < 6) {
+            Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Perform authentication (Replace with actual backend call)
+        if (email == "user@example.com" && password == "password123") {
+            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+            // Redirect to home screen
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
             finish()
+        } else {
+            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
         }
     }
 }

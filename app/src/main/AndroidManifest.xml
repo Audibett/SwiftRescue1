@@ -23,7 +23,7 @@
             android:value="AIzaSyCoJ3rdhogQL9vf-YLXIaSA34sQadHrN88"/>
 
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -31,7 +31,20 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".ChatActivity"/>
+        <activity android:name=".ComplaintActivity"/>
+        <activity android:name=".DriverHomeActivity"/>
+        <activity android:name=".EditProfileActivity"/>
+        <activity android:name=".MechanicHomeActivity"/>
+        <activity android:name=".MyRequestsActivity"/>
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".ProviderDetailsActivity"/>
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".ResetPasswordActivity"/>
+        <activity android:name=".SearchingForHelpActivity"/>
+        <activity android:name=".ServiceCompletionActivity"/>
+        <activity android:name=".ServiceRequestActivity"/>
 
     </application>
 </manifest>
