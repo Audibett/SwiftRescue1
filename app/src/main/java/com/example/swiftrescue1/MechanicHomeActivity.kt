@@ -2,22 +2,20 @@ package com.example.swiftrescue1
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.Toolbar
 
 class MechanicHomeActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ServiceRequestAdapter
     private val serviceRequests = listOf(
-        ServiceRequest("Flat Tire", "John Doe", "Nairobi CBD"),
-        ServiceRequest("Battery Jumpstart", "Jane Doe", "Westlands"),
-        ServiceRequest("Towing Needed", "Mike Smith", "Kilimani")
+        ServiceRequests(1, "Flat Tire", "Audia Bett", "Nairobi CBD"),
+        ServiceRequests(2, "Battery Jumpstart", "Miriam Wangui", "Westlands"),
+        ServiceRequests(3, "Towing Needed", "Weddy Wamaitha", "Kilimani")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -30,10 +30,10 @@ class ProfileActivity : AppCompatActivity() {
         btnLogout = findViewById(R.id.btnLogout)
 
         // Sample User Data (Replace with actual user data)
-        tvName.text = "John Doe"
+        tvName.text = "MIRIAM WANGUI"
         tvRole.text = "Driver"
-        tvPhone.text = "+254 700 123 456"
-        tvEmail.text = "johndoe@example.com"
+        tvPhone.text = "+254 706 179 777"
+        tvEmail.text = "wanguimiriam@outlook.com"
 
         btnEditProfile.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)

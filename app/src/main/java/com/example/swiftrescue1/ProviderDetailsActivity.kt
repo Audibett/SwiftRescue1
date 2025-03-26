@@ -25,7 +25,7 @@ class ProviderDetailsActivity : AppCompatActivity() {
         val btnCancel = findViewById<Button>(R.id.btnCancel)
 
         // Dummy data (you'll replace this with real API data)
-        tvMechanicName.text = "John Doe"
+        tvMechanicName.text = "Weddy wamaitha"
         ratingBar.rating = 4.5f
         tvServiceType.text = "Tire Change"
         tvETA.text = "ETA: 10 mins"
@@ -40,7 +40,7 @@ class ProviderDetailsActivity : AppCompatActivity() {
         // Chat Button - Opens Chat Activity
         btnChat.setOnClickListener {
             val chatIntent = Intent(this, ChatActivity::class.java)
-            chatIntent.putExtra("providerName", "John Doe")
+            chatIntent.putExtra("providerName", "Miriam Wangui")
             startActivity(chatIntent)
         }
 

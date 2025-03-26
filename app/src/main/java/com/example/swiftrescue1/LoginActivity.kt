@@ -11,6 +11,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var tvRegisterLink: TextView
+    private lateinit var dbHelper: DatabaseHelper  // Database helper instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,8 @@ class LoginActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         tvRegisterLink = findViewById(R.id.tvRegisterLink)
+
+        dbHelper = DatabaseHelper(this)  // Initialize database helper
 
         btnLogin.setOnClickListener {
             authenticateUser()
@@ -50,8 +53,8 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        // Perform authentication (Replace with actual backend call)
-        if (email == "user@example.com" && password == "password123") {
+        // Authenticate with SQLite database
+        if (dbHelper.loginUser(email, password)) {
             Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
             // Redirect to home screen
             val intent = Intent(this, HomeActivity::class.java)

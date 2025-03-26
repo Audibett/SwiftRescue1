@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+// Define the correct data class
 data class ServiceRequest(val issue: String, val customerName: String, val location: String)
 
-class ServiceRequestAdapter(private val requests: List<ServiceRequest>) :
+class ServiceRequestAdapter(private val requests: List<ServiceRequests>) :
     RecyclerView.Adapter<ServiceRequestAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -10,9 +10,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ServiceCompletionActivity : AppCompatActivity() {
+    private lateinit var dbHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service_completion)
+
+        // Initialize Database Helper
+        dbHelper = DatabaseHelper(this)
 
         // Initialize Views
         val tvServiceDetails = findViewById<TextView>(R.id.tvServiceDetails)
@@ -21,8 +26,14 @@ class ServiceCompletionActivity : AppCompatActivity() {
         val btnConfirmCompletion = findViewById<Button>(R.id.btnConfirmCompletion)
         val btnGoHome = findViewById<Button>(R.id.btnGoHome)
 
-        // Set service details (you can fetch this from intent or database)
-        tvServiceDetails.text = "Service: Tire Change\nMechanic: John Doe\nCost: $50\nTime: 30 mins"
+        // Dummy data (this can be fetched from intent or database)
+        val mechanicName = "Weddy wamaitha"
+        val serviceDescription = "Tire Change"
+        val cost = 50.0
+        val timeTaken = "30 mins"
+
+        // Set service details
+        tvServiceDetails.text = "Service: $serviceDescription\nMechanic: $mechanicName\nCost: $$cost\nTime: $timeTaken"
 
         // Handle confirmation
         btnConfirmCompletion.setOnClickListener {
@@ -34,13 +45,16 @@ class ServiceCompletionActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Save rating & review (this should be stored in the database)
-            Toast.makeText(this, "Service Completed. Thank you!", Toast.LENGTH_SHORT).show()
-
-            // Navigate to Home (or close activity)
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            // Save rating & review in database
+            val success = dbHelper.addServiceCompletion(mechanicName, serviceDescription, cost, timeTaken, rating, review)
+            if (success) {
+                Toast.makeText(this, "Service Completed. Thank you!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Failed to save service completion!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Handle Go Home button
