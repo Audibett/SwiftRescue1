@@ -1,6 +1,5 @@
 package com.example.swiftrescue1
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -60,7 +59,9 @@ class DriverHomeActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun sendSOSAlert() {
-        // Logic for SOS alert (e.g., send notification, call emergency services)
+        // Navigate to RequestActivity when SOS button is pressed
+        val intent = Intent(this, ServiceRequestActivity::class.java)
+        startActivity(intent)
     }
 
     // MapView lifecycle methods

@@ -17,9 +17,9 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var dotsIndicator: LinearLayout
 
     private val onboardingScreens = listOf(
-        OnboardingModel(R.drawable.onboarding1, "Welcome", "Swift Rescue - Your roadside assistance partner."),
-        OnboardingModel(R.drawable.onboarding2, "Real-time Tracking", "Track your rescue team in real-time."),
-        OnboardingModel(R.drawable.onboarding3, "Seamless Service", "Quick and reliable vehicle breakdown assistance.")
+        OnboardingModel(R.drawable.on1, "Welcome", "Swift Rescue - Your roadside assistance partner."),
+        OnboardingModel(R.drawable.on2, "Real-time Tracking", "Track your rescue team in real-time."),
+        OnboardingModel(R.drawable.on3, "Seamless Service", "Quick and reliable vehicle breakdown assistance.")
     )
 
     private lateinit var adapter: OnboardingAdapter
